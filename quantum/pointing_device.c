@@ -16,6 +16,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+// #include "print.h"
+
 #include "pointing_device.h"
 #include <string.h>
 #include "timer.h"
@@ -208,6 +210,14 @@ report_mouse_t pointing_device_adjust_by_defines(report_mouse_t mouse_report) {
 #endif
 #if defined(POINTING_DEVICE_INVERT_Y)
     mouse_report.y = -mouse_report.y;
+#endif
+#if defined(POINTING_DEVICE_ENABLE_ACCELERATION)
+    int8_t x = mouse_report.x, y = mouse_report.y;
+    mouse_report.x = (x > 0 ? x * x * x / 20 + x * x / 2 + x : x * x * x / 20 - x * x / 2 + x);
+    mouse_report.y = (y > 0 ? y * y * y / 20 + y * y / 2 + y : y * y * y / 20 - y * y / 2 + y);
+    // if (x != 0 || y != 0) {
+    //     uprintf("mouse: (%d, %d) => (%d, %d)", x, y, mouse_report.x, mouse_report.y);
+    // }
 #endif
     return mouse_report;
 }

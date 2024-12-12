@@ -1,3 +1,10 @@
+# Flashing
+
+```
+qmk erase
+qmk flash -j0 -c -kb bastardkb/charybdis/4x6/v2/elitec -km default -bl dfu-split-right
+```
+
 # Charybdis (6x4, 5x3 "Nano")
 
 An ergonomic keyboard with integrated trackball.
@@ -21,6 +28,7 @@ Check out the [keyboard build guides](https://docs.bastardkb.com) for the Charyb
 **You must specify the shield version when compiling/flashing the firmware.**
 
 The template is:
+
 ```shell
 qmk compile -kb bastardkb/charybdis/{LAYOUT}/{VERSION}/elitec -km {KEYMAP}
 ```
@@ -33,16 +41,16 @@ Check out the `via` layout if you're looking for VIA support.
 
 ### Charybdis (4x6)
 
-| Shield Version | default                                                         | via                                                             |
-|----------------|-----------------------------------------------------------------|-----------------------------------------------------------------|
-| v1             | `qmk compile -kb bastardkb/charybdis/4x6/v1/elitec -km default` | `qmk compile -kb bastardkb/charybdis/4x6/v1/elitec -km via`     |
+| Shield Version | default                                                         | via                                                         |
+| -------------- | --------------------------------------------------------------- | ----------------------------------------------------------- |
+| v1             | `qmk compile -kb bastardkb/charybdis/4x6/v1/elitec -km default` | `qmk compile -kb bastardkb/charybdis/4x6/v1/elitec -km via` |
 | v2             | `qmk compile -kb bastardkb/charybdis/4x6/v2/elitec -km default` | `qmk compile -kb bastardkb/charybdis/4x6/v2/elitec -km via` |
 
 ### Charybdis (3x5)
 
-| Shield Version | default                                                         | via                                                             |
-|----------------|-----------------------------------------------------------------|-----------------------------------------------------------------|
-| v1             | `qmk compile -kb bastardkb/charybdis/3x5/v1/elitec -km default` | `qmk compile -kb bastardkb/charybdis/3x5/v1/elitec -km via`     |
+| Shield Version | default                                                         | via                                                         |
+| -------------- | --------------------------------------------------------------- | ----------------------------------------------------------- |
+| v1             | `qmk compile -kb bastardkb/charybdis/3x5/v1/elitec -km default` | `qmk compile -kb bastardkb/charybdis/3x5/v1/elitec -km via` |
 | v2             | `qmk compile -kb bastardkb/charybdis/3x5/v2/elitec -km default` | `qmk compile -kb bastardkb/charybdis/3x5/v2/elitec -km via` |
 
 ## Customizing the firmware
